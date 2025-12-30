@@ -1,0 +1,54 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at bottom, #0b1026, #000);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#bgText {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: clamp(40px, 8vw, 120px);
+  font-weight: bold;
+  text-align: center;
+  pointer-events: none;
+  z-index: 5;
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+  transition: opacity 1.2s ease, transform 1.2s ease, filter 1.2s ease;
+
+  background: linear-gradient(90deg, #ff0000, #ff9900, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400% 400%;
+  animation: rainbow 5s linear infinite;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 4;
+}
+
+#hint {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: #aaa;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  z-index: 6;
+}
